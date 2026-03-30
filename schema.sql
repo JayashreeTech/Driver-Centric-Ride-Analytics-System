@@ -16,3 +16,13 @@ CREATE TABLE drivers (
     rating DECIMAL(2,1),
     join_date DATE
 );
+
+-- CREATED VEHICLE TABLE
+CREATE TABLE vehicles (
+    vehicle_id INT PRIMARY KEY AUTO_INCREMENT,
+    driver_id INT,
+    vehicle_type VARCHAR(50),
+    vehicle_number VARCHAR(20),
+    model VARCHAR(50),
+    FOREIGN KEY (driver_id) REFERENCES drivers(driver_id)
+);
